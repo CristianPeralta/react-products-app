@@ -9,5 +9,8 @@ const useStore = () => {
 
     useEffect(() => {
         listeners.push(useState);
+        return () => {
+            listeners = listeners.filter(li => li !== setState);
+        }
     }, [setState]);
 };
