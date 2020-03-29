@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-export const ProductsContext = React.createContext({ products: [] });
+export const ProductsContext = React.createContext({
+    products: [],
+    toggleFav: id => {},
+});
 
 export default props => {
     const [productList, setProductList] = useState([
