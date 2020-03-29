@@ -17,7 +17,7 @@ export const useStore = () => {
     }
 
     useEffect(() => {
-        listeners.push(useState);
+        listeners.push(setState);
         return () => {
             listeners = listeners.filter(li => li !== setState);
         }
