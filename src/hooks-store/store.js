@@ -4,7 +4,7 @@ let globalState = {};
 let actions = {};
 let listeners = [];
 
-const useStore = () => {
+export const useStore = () => {
     const setState = useState(globalState)[1];
 
     const dispatch = actionIdentifier => {
@@ -25,3 +25,11 @@ const useStore = () => {
 
     return [globalState, dispatch];
 };
+
+export const initState = (userActions, initialState) => {
+    if (initState) {
+        globalState = { ...globalState, ...initialState };
+
+        actions = { ...actions, ...userActions };
+    }
+}
