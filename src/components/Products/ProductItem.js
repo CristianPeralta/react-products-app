@@ -7,7 +7,7 @@ import { useStore } from '../../hooks-store/store';
 
 const ProductItem = React.memo(props => {
   console.log('RENDERING');
-  const dispatch = useStore()[1];
+  const dispatch = useStore(false)[1];
 
   const toggleFavHandler = () => {
     dispatch('TOGGLE_FAV', props.id);
